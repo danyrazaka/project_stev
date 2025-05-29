@@ -118,7 +118,7 @@
           const container = document.getElementById('content');
           container.innerHTML = html;
 
-          // Ajouter gestion des liens internes du sommaire (ex: [→ chapitre 2](2.md))
+          // Activer les liens vers d'autres fichiers markdown
           container.querySelectorAll('a[href$=".md"]').forEach(link => {
             link.addEventListener('click', event => {
               event.preventDefault();
@@ -134,7 +134,7 @@
         });
     }
 
-    // Charger le sommaire par défaut au chargement de la page
+    // Charger Sommaire.md par défaut
     window.onload = function () {
       loadMarkdown('Sommaire.md');
     };
