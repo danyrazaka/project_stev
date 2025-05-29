@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projet Stevia - Consultation</title>
+  <style>
+    body { display: flex; font-family: sans-serif; margin: 0; }
+    nav { width: 280px; background: #f4f4f4; padding: 1em; height: 100vh; overflow-y: auto; }
+    main { flex-grow: 1; padding: 2em; overflow-y: auto; }
+    a { display: block; margin: 0.5em 0; color: #333; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>Sommaire</h2>
+    <a href="#" onclick="loadMarkdown('Sommaire.md')">📄 Sommaire</a>
+    <a href="#" onclick="loadMarkdown('1.md')">1. Projet d'usine de stevia à Madagascar</a>
+    <a href="#" onclick="loadMarkdown('2.md')">2. Sélection et propagation des jeunes pousses</a>
+    <a href="#" onclick="loadMarkdown('3.md')">3. Préparation du terrain et plantation</a>
+    <a href="#" onclick="loadMarkdown('4.md')">4. Techniques culturales et gestion</a>
+    <a href="#" onclick="loadMarkdown('5.md')">5. Récolte et post-récolte</a>
+    <a href="#" onclick="loadMarkdown('6.md')">6. Extraction et transformation primaire</a>
+    <a href="#" onclick="loadMarkdown('7.md')">7. Production de stevia en poudre</a>
+    <a href="#" onclick="loadMarkdown('8.md')">8. Contrôle qualité et certification</a>
+    <a href="#" onclick="loadMarkdown('9.md')">9. Aspects économiques et rentabilité</a>
+    <a href="#" onclick="loadMarkdown('10.md')">10. Automatisation et optimisation</a>
+    <a href="#" onclick="loadMarkdown('11.md')">11. Durabilité et responsabilité sociale</a>
+    <a href="#" onclick="loadMarkdown('12.md')">12. Conclusion et perspectives</a>
+  </nav>
+  <main id="content">Choisissez un chapitre dans le menu.</main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    function loadMarkdown(file) {
+      fetch('markdown/' + file)
+        .then(response => {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.text();
+        })
+        .then(text => {
+          document.getElementById('content').innerHTML = marked.parse(text);
+        })
+        .catch(error => {
+          document.getElementById('content').innerHTML = `<p>Erreur de chargement : ${error.message}</p>`;
+        });
+    }
+  </script>
+</body>
+</html>
