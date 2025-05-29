@@ -4,54 +4,84 @@
   <meta charset="UTF-8">
   <title>Projet Stevia - Consultation</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
+  body {
+    display: flex;
+    font-family: sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  nav {
+    width: 280px;
+    min-width: 280px;
+    background: #f4f4f4;
+    padding: 1em;
+    overflow-y: auto;
+    flex-shrink: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+
+  main {
+    flex-grow: 1;
+    padding: 2em;
+    overflow-y: auto;
+    background-color: #fff;
+  }
+
+  a {
+    display: block;
+    margin: 0.5em 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+    margin-top: 1.5em;
+  }
+
+  .markdown-content p {
+    margin: 0.5em 0;
+  }
+
+  /* ✅ Améliorations pour mobile */
+  @media (max-width: 768px) {
     body {
-      display: flex;
-      font-family: sans-serif;
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
+      flex-direction: column;
     }
 
     nav {
-      width: 280px;
-      min-width: 280px;
-      background: #f4f4f4;
-      padding: 1em;
-      overflow-y: auto;
-      flex-shrink: 0;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      width: 100%;
+      min-width: unset;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      font-size: 1.1em;
+    }
+
+    nav a {
+      flex: 1 1 calc(50% - 1em);
+      font-size: 1.1em;
+      padding: 0.5em 0;
     }
 
     main {
-      flex-grow: 1;
-      padding: 2em;
+      padding: 1em;
+      height: calc(100vh - 200px); /* Ajustable selon le nombre de liens */
       overflow-y: auto;
-      background-color: #fff;
     }
-
-    a {
-      display: block;
-      margin: 0.5em 0;
-      color: #333;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .markdown-content h1, .markdown-content h2, .markdown-content h3 {
-      margin-top: 1.5em;
-    }
-
-    .markdown-content p {
-      margin: 0.5em 0;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <nav>
