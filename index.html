@@ -4,61 +4,76 @@
   <meta charset="UTF-8">
   <title>Projet Stevia - Consultation</title>
   <style>
-  body {
-    display: flex;
-    font-family: sans-serif;
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  nav {
-    width: 280px;
-    min-width: 280px;
-    background: #f4f4f4;
-    padding: 1em;
-    overflow-y: auto;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
-  }
+    body {
+      display: flex;
+      font-family: sans-serif;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-  main {
-    flex-grow: 1;
-    padding: 2em;
-    overflow-y: auto;
-  }
+    nav {
+      width: 280px;
+      min-width: 280px;
+      background: #f4f4f4;
+      padding: 1em;
+      overflow-y: auto;
+      flex-shrink: 0;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
 
-  a {
-    display: block;
-    margin: 0.5em 0;
-    color: #333;
-    text-decoration: none;
-  }
+    main {
+      flex-grow: 1;
+      padding: 2em;
+      overflow-y: auto;
+      background-color: #fff;
+    }
 
-  a:hover {
-    text-decoration: underline;
-  }
-</style>
+    a {
+      display: block;
+      margin: 0.5em 0;
+      color: #333;
+      text-decoration: none;
+    }
 
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+      margin-top: 1.5em;
+    }
+
+    .markdown-content p {
+      margin: 0.5em 0;
+    }
+  </style>
 </head>
 <body>
   <nav>
     <h2>Sommaire</h2>
     <a href="#" onclick="loadMarkdown('Sommaire.md')">📄 Sommaire</a>
     <a href="#" onclick="loadMarkdown('1.md')">1. Projet d'usine de stevia à Madagascar</a>
-    <a href="#" onclick="loadMarkdown('2.md')">2. Sélection et propagation des jeunes pousses</a>
-    <a href="#" onclick="loadMarkdown('3.md')">3. Préparation du terrain et plantation</a>
-    <a href="#" onclick="loadMarkdown('4.md')">4. Techniques culturales et gestion</a>
+    <a href="#" onclick="loadMarkdown('2.md')">2. Sélection et propagation</a>
+    <a href="#" onclick="loadMarkdown('3.md')">3. Préparation du terrain</a>
+    <a href="#" onclick="loadMarkdown('4.md')">4. Techniques culturales</a>
     <a href="#" onclick="loadMarkdown('5.md')">5. Récolte et post-récolte</a>
-    <a href="#" onclick="loadMarkdown('6.md')">6. Extraction et transformation primaire</a>
-    <a href="#" onclick="loadMarkdown('7.md')">7. Production de stevia en poudre</a>
-    <a href="#" onclick="loadMarkdown('8.md')">8. Contrôle qualité et certification</a>
-    <a href="#" onclick="loadMarkdown('9.md')">9. Aspects économiques et rentabilité</a>
-    <a href="#" onclick="loadMarkdown('10.md')">10. Automatisation et optimisation</a>
-    <a href="#" onclick="loadMarkdown('11.md')">11. Durabilité et responsabilité sociale</a>
-    <a href="#" onclick="loadMarkdown('12.md')">12. Conclusion et perspectives</a>
+    <a href="#" onclick="loadMarkdown('6.md')">6. Extraction et transformation</a>
+    <a href="#" onclick="loadMarkdown('7.md')">7. Production en poudre</a>
+    <a href="#" onclick="loadMarkdown('8.md')">8. Contrôle qualité</a>
+    <a href="#" onclick="loadMarkdown('9.md')">9. Aspects économiques</a>
+    <a href="#" onclick="loadMarkdown('10.md')">10. Automatisation</a>
+    <a href="#" onclick="loadMarkdown('11.md')">11. Durabilité</a>
+    <a href="#" onclick="loadMarkdown('12.md')">12. Conclusion</a>
   </nav>
-  <main id="content">Choisissez un chapitre dans le menu.</main>
+
+  <main>
+    <div id="content" class="markdown-content">Choisissez un chapitre dans le menu.</div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
