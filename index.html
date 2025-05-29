@@ -33,7 +33,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     function loadMarkdown(file) {
-      fetch('markdown/' + file)
+      fetch('./markdown/' + file)
         .then(response => {
           if (!response.ok) throw new Error("HTTP " + response.status);
           return response.text();
